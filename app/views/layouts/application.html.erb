@@ -18,9 +18,18 @@
                         <%= link_to("home", root_path) %>
                     </li>
 
-                    <li>
-                        <%= link_to("register", new_user_path) %>
-                    </li>
+                    <% if logged_in? %>
+                        <li>
+                            <%= link_to "log out (#{current_user.username})" %>
+                        </li>
+                    <% else %>
+                        <li>
+                            <%= link_to("register", new_user_path) %>
+                        </li>
+                        <li>
+                            <%= link_to("log in", new_session_path) %>
+                        </li>
+                    <% end %>
                 </ul>
             </div><!-- end nav -->
 

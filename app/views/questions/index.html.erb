@@ -1,2 +1,10 @@
 <%= provide(:title, "q & a") %>
-<p>questions home page</p>
+
+<div>
+  <h1>ask a question</h1>
+  <% if logged_in? %>
+    <%= render 'question_form' %>
+  <% else %>
+    <p>log in to ask or answer questions</p>
+  <% end %>
+</div>

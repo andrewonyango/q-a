@@ -1,0 +1,5 @@
+<%= provide(:title, "question #{@question.id}") %>
+
+<h1><%= @question.user.username %> asks:</h1>
+
+<p><%= @question.body %></p>

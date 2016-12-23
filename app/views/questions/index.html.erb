@@ -5,7 +5,7 @@
   <% if logged_in? %>
     <%= render 'question_form' %>
   <% else %>
-    <p>log in to ask or answer questions</p>
+    <p><%= link_to "log in", login_url %> to ask or answer questions</p>
   <% end %>
 </div>
 

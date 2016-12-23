@@ -1,10 +1,22 @@
 <%= provide(:title, "q & a") %>
 
-<div>
+<div id="ask">
   <h1>ask a question</h1>
   <% if logged_in? %>
     <%= render 'question_form' %>
   <% else %>
     <p>log in to ask or answer questions</p>
+  <% end %>
+</div>
+
+<div id="questions">
+  <h1>unsolved questions</h1>
+  <% if @questions.any? %>
+    <ul>
+      <%= render @questions %>
+    </ul>
+    <%= will_paginate %>
+  <% else %>
+    <p>no questions have been asked yet.</p>
   <% end %>
 </div>

@@ -1,0 +1,4 @@
+<li>
+  <%= truncate(question.body, length: 35) %> by <%= question.user.username %>
+  on <%= question.created_at.to_s.downcase.sub(" utc", "") %>
+</li>

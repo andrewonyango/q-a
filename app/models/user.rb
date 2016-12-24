@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   has_many :questions
+  has_many :answers
   # remove :password_digest field as we don't want it manipulable by users
   # add :password and :password_confirmation virtual attributes provided by
   # has_secure_password

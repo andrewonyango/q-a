@@ -16,4 +16,10 @@ class User < ActiveRecord::Base
 
   validates :password, length: { in: 8..16 }
   validates :password_confirmation, length: { in: 8..16 }
+
+  def your_questions(params)
+    questions.paginate(page: params[:page],
+                       order: 'created_at DESC',
+                       per_page: 5)
+  end
 end

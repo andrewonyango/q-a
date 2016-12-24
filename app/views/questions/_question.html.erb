@@ -1,5 +1,9 @@
 <li>
   <%= link_to truncate(question.body, length: 35), question %>
+  <%= display_solved(question) %>
   by <%= question.user.username %>
   on <%= question.created_at.to_s.downcase.sub(" utc", "") %>
+  <% if on_your_questions_page? %>
+    - <%= link_to "edit", edit_question_path(question) %>
+  <% end %>
 </li>

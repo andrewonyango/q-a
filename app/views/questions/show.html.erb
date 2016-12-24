@@ -2,4 +2,4 @@
 
 <h1><%= @question.user.username %> asks:</h1>
 
-<p><%= @question.body %> on <%= question.created_at.to_s.downcase.sub(" utc", "") %></p>
+<p><%= @question.body %> on <%= @question.created_at.to_s.downcase.sub(" utc", "") %></p>

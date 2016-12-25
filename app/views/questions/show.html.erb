@@ -3,3 +3,13 @@
 <h1><%= @question.user.username %> asks:</h1>
 
 <p><%= @question.body %> on <%= @question.created_at.to_s.downcase.sub(" utc", "") %></p>
+
+<div id="post-answer">
+  <h2>answer this question</h2>
+
+  <% if logged_in? %>
+    <%= render 'answers/answer_form' %>
+  <% else %>
+    log in to post an answer
+  <% end %>
+</div>

@@ -1,0 +1,10 @@
+<%= form_for([@question, @answer]) do |form| %>
+  
+  <%= render 'common/form_errors', object: @answer %>
+
+  <p>
+    <%= form.label :body, "answer" %>
+    <%= form.text_field :body %>
+    <%= form.submit "post answer" %>
+  </p>
+<% end %>

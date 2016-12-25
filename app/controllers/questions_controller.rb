@@ -1,5 +1,5 @@
 class QuestionsController < ApplicationController
-  before_filter :auth, except: [:index, :show]
+  before_filter :auth, except: [:index, :show, :search]
 
   def index
     @question = Question.new

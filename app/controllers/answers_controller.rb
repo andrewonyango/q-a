@@ -11,6 +11,9 @@ class AnswersController < ApplicationController
       flash[:success] = 'your answer has been posted'
       redirect_to @question
     else
+      # without this, the question still has the invalid answer in memory
+      # when it should be scrapped
+      @question = Question.find(params[:question_id])
       render 'questions/show'
     end
   end

@@ -1,5 +1,6 @@
 <li>
   <%= link_to truncate(question.body, length: 35), question %>
+  (<%= pluralize(question.answers.count, 'answer') %>)
   <%= display_solved(question) %>
   by <%= question.user.username %>
   on <%= question.created_at.to_s.downcase.sub(" utc", "") %>

@@ -4,6 +4,17 @@
 
 <p><%= @question.body %> on <%= @question.created_at.to_s.downcase.sub(" utc", "") %></p>
 
+<div id="answers">
+  <% if @question.answers.any? %>
+    <h2>answers</h2>
+    <ul>
+      <%= render @question.answers %>
+    </ul>
+  <% else %>
+    this question has not been answered yet
+  <% end %>
+</div>
+
 <div id="post-answer">
   <h2>answer this question</h2>
 

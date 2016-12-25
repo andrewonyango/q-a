@@ -1,0 +1,12 @@
+<% provide(:title, 'search results') %>
+<h1>search results</h1>
+
+<div>
+  <% if @questions.any? %>
+    <ul>
+      <%= render @questions %>
+    </ul>
+  <% else %>
+    <p>no questions were found containing the keyword(s). try something different.</p>
+  <% end %>
+</div>

@@ -42,4 +42,8 @@ class QuestionsController < ApplicationController
       render 'edit'
     end
   end
+
+  def search
+    @questions = Question.search(params)
+  end
 end

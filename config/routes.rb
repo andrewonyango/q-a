@@ -11,4 +11,5 @@ Makeitsnappy::Application.routes.draw do
   match '/login', to: 'sessions#new'
   match '/logout', to: 'sessions#destroy', via: :delete
   match '/your_questions', to: 'questions#your_questions'
+  match '/search', to: 'questions#search'
 end

@@ -7,8 +7,16 @@ class Question < ActiveRecord::Base
   validates :solved, inclusion: { in: [true, false] }
 
   def self.unsolved(params)
-    where(solved: false).paginate(page: params[:page],
-                                  order: 'created_at DESC',
-                                  per_page: 5)
+    where(solved: false).paginate(
+      page: params[:page],
+      order: 'created_at DESC',
+      per_page: 5)
+  end
+
+  def self.search(params)
+    where("body LIKE ?", "%#{params[:keyword]}%").paginate(
+      page: params[:page],
+      order: 'created_at DESC',
+      per_page: 5)
   end
 end
